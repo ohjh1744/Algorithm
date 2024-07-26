@@ -1,0 +1,10 @@
+L15 에서 
+Correctness analysis of MST algorithms
+는 스킵해도 된다하심
+
+L16에서 7쪽 appendix 넘어가도된다하심''
+
+L20에서 9쪽 무슨?증명은안함(영상돌려보기), intution이나 어떤식으로 돌아가는지 이해정도만
+37쪽에서 파이 설계 더 빠르게하는 법 스킵해도됨(but 현실에서 더자주씀 그코드를)
+
+L21 P NP NP-h, NP-c 설명할줄 알정도로 이해하기.
