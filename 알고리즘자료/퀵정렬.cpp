@@ -13,6 +13,9 @@ int partition(int arr[], int l, int r)
 			arr[i] = temp;
 		}
 	}
+	int temp = arr[r];
+	arr[r] = arr[i+1];
+	arr[i+1] = temp;
 	return i+1;
 }
 
