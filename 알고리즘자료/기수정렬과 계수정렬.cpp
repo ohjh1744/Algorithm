@@ -3,11 +3,11 @@
 using namespace std;
 
 
-//±â¼öÁ¤·Ä
+//ê¸°ìˆ˜ì •ë ¬
 int arr[1000];
 
-//±â¼öÁ¤·Ä 
-// k´Â ÃÖ°í ÀÚ¸®¼ö, n Àº ¹è¿­Å©±â 
+//ê¸°ìˆ˜ì •ë ¬ 
+// këŠ” ìµœê³  ìë¦¬ìˆ˜, n ì€ ë°°ì—´í¬ê¸° 
 void radix_sort(int n, int k )
 {
 	queue <int> q[10]; // 0~9
@@ -28,15 +28,15 @@ void radix_sort(int n, int k )
 	}
 }
 
-//°è¼öÁ¤·Ä
+//ê³„ìˆ˜ì •ë ¬
 int arr[1001];
 int cnt[1000];
 int s_arr[1001];
-//k´Â °¡Àå Å« ¼ö , n Àº ¹è¿­Å©±â 
+//këŠ” ë°°ì—´ì—ì„œ ê°€ì¥ í° ìˆ˜ , n ì€ ë°°ì—´í¬ê¸° 
 void count_sort(int n, int k) 
 {
 	for(int i = 1; i <= n; i++){
-		cnt[i]++;
+		cnt[arr[i]]++;
 	}
 	
 	for(int i = 2; i <= k; i++){
