@@ -3,18 +3,17 @@
 using namespace std;
 
 
-//ê¸°ìˆ˜ì •ë ¬
+//±â¼ö Á¤·Ä 
 int arr[1000];
 
-//ê¸°ìˆ˜ì •ë ¬ 
-// këŠ” ìµœê³  ìë¦¬ìˆ˜, n ì€ ë°°ì—´í¬ê¸° 
+// k´Â ¼ıÀÚ ±æÀÌ(ex 333 : 3°³), nÀº ¹è¿­Å©±â 
 void radix_sort(int n, int k )
 {
 	queue <int> q[10]; // 0~9
 	for(int i = 1; i <= k ; i++){
 		for(int j = 1; j <= n; j++){
-			int d = (arr[i] / (int)pow(10, i-1)) % 10;
-			q[d].push({arr[i]});
+			int d = (arr[j] / (int)pow(10, i-1)) % 10;
+			q[d].push({arr[j]});
 		}
 		
 		int p = 1;
@@ -28,11 +27,11 @@ void radix_sort(int n, int k )
 	}
 }
 
-//ê³„ìˆ˜ì •ë ¬
+//°è¼öÁ¤·Ä 
 int arr[1001];
 int cnt[1000];
 int s_arr[1001];
-//këŠ” ë°°ì—´ì—ì„œ ê°€ì¥ í° ìˆ˜ , n ì€ ë°°ì—´í¬ê¸° 
+//k´Â °¡Àå Å«¼ö, nÀº ¹è¿­ Å©±â 
 void count_sort(int n, int k) 
 {
 	for(int i = 1; i <= n; i++){
