@@ -19,7 +19,7 @@ void radix_sort(int n, int k )
 		int p = 1;
 		for(int i = 0; i<= 9; i++){
 			while(!q[i].empty()){
-				arr[p] = q.front();
+				arr[p] = q.front();/////////
 				q.pop();
 				p++;
 			}
@@ -38,7 +38,7 @@ void count_sort(int n, int k)
 		cnt[arr[i]]++;
 	}
 	
-	for(int i = 2; i <= k; i++){
+	for(int i = 2; i <= k; i++/){
 		cnt[i] = cnt[i] + cnt[i-1];
 	}
 	
