@@ -34,6 +34,6 @@ void heapSort(int &arr[],int size) {
     buildHeap(arr, size);
     for (int i = size; i >= 2; i--) {
         swap(&arr[0], &arr[treeSize]);
-        heapify(arr, 1, i);
+        heapify(arr, 1, i-1);
     }
 }
