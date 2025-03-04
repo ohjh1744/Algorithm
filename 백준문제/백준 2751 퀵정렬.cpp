@@ -4,7 +4,7 @@ using namespace std;
 int n;
 int temp[1000001];
 
-int partition(int* arr, int left, int right)
+int partition(int arr[], int left, int right)
 {
 	int i = left-1;
 	for(int j = left; j <= right-1; j++){
@@ -24,7 +24,7 @@ int partition(int* arr, int left, int right)
 }
 
 
-void quick_sort(int* arr, int left, int right)
+void quick_sort(int arr[], int left, int right)
 {
 	if(left < right){
 		int pivot = partition(temp, left, right);
