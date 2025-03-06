@@ -1,13 +1,15 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
 using namespace std;
 
-int n;
-int ans= 99999999;
-vector < pair < int, int > > v;
+// 육각수 hn -> 한변에 점이 n개인 육각형의 총 점의 개수 
+int h[1000001];
 
-// https://rjsdh15963.tistory.com/56 블로그 참고. 
+//구한 육각수 개수 
+int h_n;
+
+int n;
+// 합이 N이 되는 육각수 개수의 최소깂 dp[1] N이1. 
+int dp[1000001];
 
 int main(){
 	
@@ -17,33 +19,37 @@ int main(){
 	
 	cin >> n;
 	
-	for(int i = 0; i < n; i++){
-		int t, s;
-		cin >> t >> s;
-		v.push_back({s, t});
-	}
+	h[1] = 1;
+	h[2] = 6; 
 	
-	//처리해야할 시간 s를 기준으로 오름차순 정렬 
-	sort(v.begin(), v.end());
+	h_n = 2;
 	
-	int currentTime = 0;
-	
-	for(int i = 0; i < v.size(); i++){
-		int s = v[i].first;
-		int t = v[i].second;
+	//육각수 구하기
+	//육각수의 점 개수가 n보다 크지 않을때까지  구하기 
+	for(int i = 3; i < 1000001; i++){
+		h[i] = ((i * 6) - 6) + (h[i-1] - h[i-1]/(i-1));
 		
-		currentTime += t;
-		// 현재 시간 0에서 t를 점차 더해주고, 그 값을 s값과 비교.
-		// 각 과정에서 가장 그 차이가 작은 값이 최대한 늦게 시작할 수 있는 시간.
-		// 만약 음수의 값이 나오면 일을 시간내 못끝냄. 
-		ans = min(ans, s - currentTime);
-		
-		if(ans < 0){
-			ans = -1;
+		if(h[i] > n){
 			break;
+		}
+		
+		h_n++;
+	} 
+	
+	//dp 초기화 
+	for(int i = 0; i <= n; i++){
+		dp[i] = i;
+	}
+
+	for(int i = 6; i <= n; i++){
+		for(int j = 1; j <= h_n; j++){
+			if(i >= h[j]){
+				dp[i] = min(dp[i] , dp[i-h[j]] + 1);
+			}
 		}
 	}
 	
-	cout << ans << "\n";
+	cout << dp[n] << "\n";
+	
 	
 }
