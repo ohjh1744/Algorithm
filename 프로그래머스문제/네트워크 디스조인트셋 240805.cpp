@@ -53,18 +53,18 @@ int solution(int n, vector<vector<int>> computers) {
         }
     }
     
-    int v[n+1][1];
+    int v[n+1];
     
     for(int i = 0; i < n; i++){
-        v[i][0] = 0;
+        v[i] = 0;
     }
     for(int i = 0; i < n; i++){
         int root = find_set(i);
-        v[root][0] += 1;
+        v[root] += 1;
     }
     
     for(int i = 0; i < n; i++){
-        if(v[i][0] > 0){
+        if(v[i] > 0){
             answer += 1;
         }
     }
